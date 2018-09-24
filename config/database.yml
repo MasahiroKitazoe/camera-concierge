@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: camera-concierge_production
-  username: camera-concierge
+  database: heroku_98f0b93dec99852
+  username: b57dc647ad95f3
   password: <%= ENV['CAMERA-CONCIERGE_DATABASE_PASSWORD'] %>
