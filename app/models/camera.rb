@@ -8,7 +8,4 @@ class Camera < ApplicationRecord
   belongs_to :camera_types
 
 
-  class << self
-    def scrape_kakaku
-    end
 end
