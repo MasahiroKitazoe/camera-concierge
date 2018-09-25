@@ -42,6 +42,9 @@ gem 'rmagick'
 gem 'fog-aws'
 gem 'delayed_job_active_record'
 gem "daemons"
+gem "font-awesome-rails"
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
