@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180925074900) do
+ActiveRecord::Schema.define(version: 20180925102547) do
+
+  create_table "camera_ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "camera_id"
+    t.bigint "rank_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camera_id"], name: "index_camera_ranks_on_camera_id"
+    t.index ["rank_id"], name: "index_camera_ranks_on_rank_id"
+  end
 
   create_table "camera_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "type"
@@ -78,6 +87,8 @@ ActiveRecord::Schema.define(version: 20180925074900) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "camera_ranks", "cameras"
+  add_foreign_key "camera_ranks", "ranks"
   add_foreign_key "cameras", "finders"
   add_foreign_key "cameras", "frames"
   add_foreign_key "cameras", "makers"

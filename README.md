@@ -33,7 +33,7 @@ https://camera-concierge.herokuapp.com/
 |finder_id|references||
 
 #### アソシエーション
-- has_many :cameras_ranks
+- has_many :camera_rank
 - has_many :ranks, through: :cameras_ranks
 - has_many :reviews
 - belongs_to :makers
@@ -59,10 +59,10 @@ https://camera-concierge.herokuapp.com/
 |title|string||
 
 #### アソシエーション
-- has_many :cameras_ranks
+- has_many :camera_rank
 - has_many :cameras, through: :cameras_ranks
 
-### cameras_ranksテーブル
+### camera_rankテーブル
 
 |Column|Type|Options|
 |------|----|-------|
