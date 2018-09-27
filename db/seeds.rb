@@ -1,7 +1,26 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+# csv_data = CSV.read('db/camera_types.csv', headers: true)
+# csv_data.each do |data|
+#   CameraType.create!(data.to_hash)
+# end
+
+# csv_data = CSV.read('db/finders.csv', headers: true)
+# csv_data.each do |data|
+#   Finder.create!(data.to_hash)
+# end
+
+# csv_data = CSV.read('db/frames.csv', headers: true)
+# csv_data.each do |data|
+#   Frame.create!(data.to_hash)
+# end
+
+# csv_data = CSV.read('db/makers.csv', headers: true)
+# csv_data.each do |data|
+#   Maker.create!(data.to_hash)
+# end
+
+csv_data = CSV.read('db/cameras.csv', headers: true)
+csv_data.each do |data|
+  Camera.create!(data.to_hash)
+end
