@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180927122941) do
+ActiveRecord::Schema.define(version: 20180928103918) do
 
   create_table "camera_ranks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "camera_id"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20180927122941) do
     t.datetime "updated_at", null: false
     t.index ["camera_id"], name: "index_camera_ranks_on_camera_id"
     t.index ["rank_id"], name: "index_camera_ranks_on_rank_id"
+  end
+
+  create_table "camera_reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "camera_id"
+    t.bigint "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camera_id"], name: "index_camera_reviews_on_camera_id"
+    t.index ["review_id"], name: "index_camera_reviews_on_review_id"
   end
 
   create_table "camera_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -108,6 +117,8 @@ ActiveRecord::Schema.define(version: 20180927122941) do
 
   add_foreign_key "camera_ranks", "cameras"
   add_foreign_key "camera_ranks", "ranks"
+  add_foreign_key "camera_reviews", "cameras"
+  add_foreign_key "camera_reviews", "reviews"
   add_foreign_key "cameras", "camera_types"
   add_foreign_key "cameras", "finders"
   add_foreign_key "cameras", "frames"
